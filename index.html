@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React 課題提出用</title>
+    <!--=================================
+      ▼css読み込み
+    ==================================-->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!--=================================
+      ▼Firebase SDKの追加
+    ==================================-->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+  </head>
+
+  <body>
+    <main class="flexbox">
+      <!--=================================================================================
+        ▼じゃんけんアプリ
+        ================================================================================-->
+      <div class="w3">
+        <h2>じゃんけんアプリ</h2>
+        <!--=================================
+          ▼top画面（ボタンクリックでゲーム画面へ遷移）
+        ==================================-->
+        <div id="topScreen">
+          <button id="goToGameButton">じゃんけんで遊ぶ</button>
+        </div>
+        <!--=================================
+          ▼game画面
+        ==================================-->
+        <div id="gameScreen" style="display: none">
+          <h2>じゃんけん...</h2>
+
+          <!--=================================
+            ▼結果
+          ==================================-->
+          <div id="computerChoice" class="font20"></div>
+          <div id="result" class="font20"></div>
+
+          <!--=================================
+            ▼選択肢ボタン
+          ==================================-->
+          <div class="gameButtonbox">
+            <button class="gameButton" data-choice="ぐー">✊</button>
+            <button class="gameButton" data-choice="ちょき">✌</button>
+            <button class="gameButton" data-choice="ぱー">🖐</button>
+          </div>
+
+          <!--=================================
+          ▼試合結果表示
+        ==================================-->
+          <div class="resultbox">
+            試合数: <span id="totalGames">0</span>,<!---->
+            勝ち: <span id="wins">0</span>,<!---->
+            負け: <span id="losses">0</span>,<!---->
+            引き分け: <span id="draws">0</span>
+          </div>
+
+          <!--=================================
+            ▼リセット・topへ戻るボタン
+          ==================================-->
+          <div>
+            <button id="resetButton">結果をリセット</button>
+            <button id="goToTopButton">TOPへ戻る</button>
+          </div>
+        </div>
+      </div>
+
+      <!--=================================================================================
+        ▼DeeplApi
+        ================================================================================-->
+      <div class="w3">
+        <h2>DeeplApi</h2>
+        <div class="generateBox">
+          <textarea id="sourceText" placeholder="翻訳するにはテキストを入力してください"></textarea>
+
+          <select id="targetLanguage">
+            <option value="EN-US">英語（アメリカ）</option>
+            <option value="EN-GB">英語（イギリス）</option>
+            <option value="ZH">中国語（簡体字）</option>
+            <option value="KO">韓国語</option>
+            <option value="JA">日本語</option>
+          </select>
+
+          <textarea id="translatedText" readonly></textarea>
+        </div>
+
+        <button id="copyButton">コピー</button>
+        <button id="clearButton">クリア</button>
+      </div>
+
+      <!--=================================================================================
+        ▼firebase連携
+        ================================================================================-->
+
+      <div class="w3">
+        <h2>firebase連携</h2>
+        <input type="file" id="imageFile" />
+        <button id="uploadButton">Upload</button>
+        <div id="imageList"></div>
+      </div>
+    </main>
+
+    <!--=================================
+      ▼jQueryライブラリを読み込み
+    ==================================-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!--=================================
+      ▼js読み込み
+    ==================================-->
+    <script src="js/janken.js"></script>
+    <script src="js/DeeplApi.js"></script>
+    <script src="js/chat.js"></script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+/*----------------------------------------
+// ▼共通
+----------------------------------------*/
+button {
+  font-size: 15px;
+}
+
+/*----------------------------------------
+// ▼じゃんけんアプリcss
+----------------------------------------*/
+.flexbox {
+  display: flex;
+}
+
+.w3 {
+  text-align: center;
+  width: 33.3%;
+}
+
+.gameButtonbox {
+  margin: 10px 0 10px 0;
+}
+
+.gameButton {
+  font-size: 50px;
+  margin: 0 10px 0 10px;
+}
+
+.resultbox {
+  margin: 10px 0 10px 0;
+  font-size: 15px;
+}
+
+.font20 {
+  font-size: 20px;
+}
+
+/*----------------------------------------
+// ▼DeeplApi css
+----------------------------------------*/
+.generateBox {
+  display: flex;
+  flex-flow: column;
+}
+
+#sourceText {
+  font-size: 15px;
+  height: 20vh;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+#targetLanguage {
+  font-size: 15px;
+  height: 5vh;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: rgb(108, 108, 108);
+  color: white;
+}
+
+#translatedText {
+  font-size: 15px;
+  height: 20vh;
+  margin-bottom: 15px;
+  padding: 10px;
+}
